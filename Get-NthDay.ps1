@@ -52,3 +52,13 @@ function Get-NthDay {
     }
 }
 
+$datetime = Get-Date -Day 14
+$patch_tuesday = Get-NthDay -Ordinal 2 -Day Tuesday
+
+$patch_tuesday_plus_two_days = $patch_tuesday.AddDays(2)
+
+if(-not($datetime -ge $patch_tuesday_plus_two_days)){
+    $datetime = (Get-date).AddMonths(-1)
+}
+
+$datetime
