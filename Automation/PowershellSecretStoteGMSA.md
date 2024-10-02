@@ -69,5 +69,5 @@ Set-Secret -Name 'UserToken' -Secret $token
 ```
 
 ```Powershell
-$token = Get-Secret -Name 'UserToken'
+$token = Get-Secret -Name 'UserToken' -AsPlainText
 ```
