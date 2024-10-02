@@ -39,8 +39,13 @@ Set-SecretStoreConfiguration @configuration
 ```
 
 ### Without Password
+
+To configure a passwordless vault, follow the configuration for a password and then remove the password configuration.
+
 ```Powershell
-Register-SecretVault -Name SecretStore -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
+
+$password = Import-CliXml -Path 'c:\Automation\SSVault.xml'
+Unlock-SecretStore -Password $credential.Password
 
 $configuration = @{
     Authentication  = 'None'
