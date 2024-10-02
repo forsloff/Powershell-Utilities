@@ -55,7 +55,7 @@ $configuration = @{
 Set-SecretStoreConfiguration @configuration
 ```
 
-## Access Vault
+## Accessing the Vault
 
 When using a password with a vault you must unlock the store frist.
 ```Powershell
