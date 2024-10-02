@@ -7,7 +7,6 @@ To configure a Secret Value for a Group Managed Service Account, we will run pow
 
 ```Batch
 ./psexec -i -u forslof\gMSA-Example$ -p ~ powershell.exe
-
 ```
 Install the SecretStore and SecretManagement powershell modules.
 ```Powershell
@@ -44,7 +43,7 @@ To configure a passwordless vault, follow the configuration for a password and t
 
 ```Powershell
 
-$password = Import-CliXml -Path 'c:\Automation\SSVault.xml'
+$credential = Import-CliXml -Path 'c:\Automation\SSVault.xml'
 Unlock-SecretStore -Password $credential.Password
 
 $configuration = @{
