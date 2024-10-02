@@ -1,4 +1,5 @@
-Register-SecretVault -Name SecretStore -ModuleName Microsoft.PowerShell.SecretStore -DefaultVault
+$credential = Import-CliXml -Path 'c:\Automation\SSVault.xml'
+Unlock-SecretStore -Password $credential.Password
 
 $configuration = @{
     Authentication  = 'None'
